@@ -48,7 +48,6 @@ function App() {
     );
     if (decodeInput !== "") {
       await fetch(url, {
-        mode: "no-cors",
         method: "get",
       })
         .then((response) => response.json())
