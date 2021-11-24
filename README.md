@@ -4,7 +4,9 @@
 
 In the project directory, you can run:
 
-### `npx use`
+### `nvm use`
+
+Installs testes npm version = 16.13.0
 
 ### `npm start`
 
