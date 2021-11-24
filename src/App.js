@@ -12,7 +12,9 @@ function App() {
   const [decodeOrginalWordsInput, setDecodeOrginalWordsInput] = useState("");
   const encode = async () => {
     if (encodeInput !== "") {
-      let url = new URL("http://localhost:8000/api/v1/encode"),
+      let url = new URL(
+          "https://weirdtext-api-dawidwk.herokuapp.com/api/v1/encode"
+        ),
         params = {
           sentence: encodeInput,
         };
@@ -34,7 +36,9 @@ function App() {
   };
 
   const decode = async () => {
-    let url = new URL("http://localhost:8000/api/v1/decode"),
+    let url = new URL(
+        "https://weirdtext-api-dawidwk.herokuapp.com/api/v1/decode"
+      ),
       params = {
         encoded_sentence: decodeInput,
         orginal_words: decodeOrginalWordsInput,
@@ -44,6 +48,7 @@ function App() {
     );
     if (decodeInput !== "") {
       await fetch(url, {
+        mode: "no-cors",
         method: "get",
       })
         .then((response) => response.json())
